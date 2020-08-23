@@ -138,3 +138,4 @@ dmypy.json
 cython_debug/
 
 ULTRA/
+result_log/*

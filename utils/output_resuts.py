@@ -15,7 +15,7 @@ from datetime import datetime
 from argparse import Namespace
 # sys.path.append("/home/taoyang/research/research_everyday/test_lab/ULTRA/")
 from datetime import datetime
-from utils import ULTRA_parser
+from ULTRA_parser import ULTRA_parser
 from datetime import datetime
 arg=ULTRA_parser()
 aa=arg.parse_args()
@@ -99,7 +99,8 @@ for path in algo_path:
             flag=False
             
             for filename in filenames:
-                if filenames!=[] and "nanyuan" in filename and data_set_name in dirpath:
+#                 print(dirpath, dirnames, filename)
+                if filenames!=[] and "tfevents" in filename and data_set_name in dirpath:
                     print(dirpath, dirnames, filename)
 #                     out = defaultdict(list)
                     steps=-1
@@ -128,7 +129,7 @@ for path in algo_path:
         df_aver_std_dict = pd.DataFrame(aver_std_dict)
         df_aver_std_dict.to_csv(path+'/'+data_set_name+"_aver_std.csv")
         np.savez(path+'/'+data_set_name+"_raw.npz", **numpy_dict)
-
+#         print(out)
 
 
 

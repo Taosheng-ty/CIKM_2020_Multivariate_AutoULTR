@@ -139,3 +139,4 @@ cython_debug/
 
 ULTRA/
 result_log/*
+plots/*

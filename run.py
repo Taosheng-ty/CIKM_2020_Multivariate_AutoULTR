@@ -130,6 +130,7 @@ for i in range(len(eta)):
 #                 pass  
             with open(json_path+algo[j],"r") as readfile:
                 exp1=json.load(readfile)
+                exp1["selection_bias_cutoff"]=10
                 if hasattr(argument,"ranking_model_hparams"):
                     exp1['ranking_model_hparams']=argument.ranking_model_hparams
                 if hasattr(argument,"ranking_model"):
@@ -141,6 +142,8 @@ for i in range(len(eta)):
                     exp1['test_input_feed']=argument.valid_input_feed
                 if hasattr(argument,"train_list_cutoff"):
                     exp1["train_list_cutoff"]=argument.train_list_cutoff
+                if hasattr(argument,"selection_bias_cutoff"):
+                    exp1["selection_bias_cutoff"]=argument.selection_bias_cutoff
                 if hasattr(argument,"metrics_topn"):
                     exp1["metrics_topn"]=argument.metrics_topn
                 exp1["metrics"]=argument.metrics
